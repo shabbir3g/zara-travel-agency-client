@@ -14,7 +14,7 @@ const Service = () => {
   return (
     <div className="bg-service">
       <Container fluid className="pt-5 pb-4">
-        <h2 className="services-head">Our Services</h2>
+        <h2 className="services-head">Our Latest Services </h2>
         <Row xs={1} md={3} className="g-4">
           {service.map((service, index) => (
             <Col>
