@@ -20,7 +20,7 @@ const Service = () => {
                                 </div>
                                <h3 className="services-title">Web Development</h3>
                                <p>
-                                   I am development static and dynamic websites per your requirements,"web worlds's home"
+                                   I am development static and dynamic websites in your requirements,"web worlds's home"
                                </p>
                             </div>
                         </Col>
