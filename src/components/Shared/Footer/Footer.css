@@ -145,12 +145,3 @@ ul.bd-travel-footer-social li a:hover {
 ul.bd-travel-footer-social li a svg {
   font-size: 20px;
 }
-/* Login Register style  */
-.login-form {
-  width: 25%;
-}
-span.landing_form--googleIcon--3Q7rS {
-  margin-right: 10px;
-  position: relative;
-  top: -1px;
-}

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Button, Col, Container, Row, Spinner } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
-import register from "../../../../images/login.jpg";
+import register from "../../../../images/login.png";
+import '../Login/Login.css'
 
 const Register = () => {
   const [registerData, setRegisterData] = useState({});
@@ -34,7 +35,7 @@ const Register = () => {
   return (
     <Container>
       <div style={{ textAlign: "center" }}>
-        <Row>
+        <Row className="login-form">
           <Col xs={12} md={6}>
             <h2>Register</h2>
             {!isLoading && (
@@ -71,14 +72,14 @@ const Register = () => {
                   onBlur={handleOnBlur}
                 />
                 <br />
-                <Button style={{ width: "75%" }} type="submit">
+                <Button className="zara-btn btn btn-dark" style={{ width: "75%" }} type="submit">
                   Register
                 </Button>
               </form>
             )}
             {isLoading && <Spinner animation="border" />}
             <Link style={{ textDecoration: "none" }} to="/login">
-              <Button>Already Registered? Please Login</Button>
+              Already Registered? Please Login
             </Link>
             <br />
             {user.email && (
