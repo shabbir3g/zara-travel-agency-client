@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from '../../../images/logo.png';
-import inst1 from '../../../images/instagram/i1.webp';
-import inst2 from '../../../images/instagram/i2.webp';
-import inst3 from '../../../images/instagram/i3.webp';
-import inst4 from '../../../images/instagram/i4.webp';
-import inst5 from '../../../images/instagram/i5.webp';
-import inst6 from '../../../images/instagram/i6.webp';
+import inst1 from '../../../images/instagram/1.jpg';
+import inst2 from '../../../images/instagram/2.jpg';
+import inst3 from '../../../images/instagram/3.jpg';
+import inst4 from '../../../images/instagram/4.jpg';
+import inst5 from '../../../images/instagram/5.jpg';
+import inst6 from '../../../images/instagram/6.jpg';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -30,7 +30,7 @@ const Footer = () => {
                     <div className="row">
                         <div className="col-md-4 col-lg-4">
                         <img className="bd-travel-footer-logo" src={logo} alt="Kinsley" />
-                        <div className="bd-travel-footer-about">Zara Drone is a powerful flagship camera drone equipped with a 4/3 CMOS Hasselblad camera to facilitate professional-level imaging. It also offers omnidirectional obstacle sensing for a smooth flight experience</div>
+                        <div className="bd-travel-footer-about">BD Travel Agency is a powerful flagship camera drone equipped with a 4/3 CMOS Hasselblad camera to facilitate professional-level imaging. It also offers omnidirectional obstacle sensing for a smooth flight experience</div>
                         <ul className="bd-travel-footer-social">
                             <li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer">{Facebook}</a></li>
                             <li><a href="https://www.twitter.com/" target="_blank" rel="noreferrer">{Twitter}</a></li>
@@ -51,7 +51,7 @@ const Footer = () => {
                         </ul>
                         </div>
                         <div className="col-md-2 col-lg-2">
-                        <h4>Zara Drone</h4>
+                        <h4>BD Travel</h4>
                         <ul className="bd-travel-footer-menu">
                             <li><Link to="/">Privacy policy</Link></li>
                             <li><Link to="/">Help center</Link></li>
@@ -80,7 +80,7 @@ const Footer = () => {
                     <div className="zara-dron-copyright">
                     <div className="container">
                         <div className="copy-text text-center">
-                        <p className="my-0"> &copy; Zara Drone 2021 | All Rights Reserved by Mostafizur Rahman</p>
+                        <p className="my-0"> &copy; BD Travel Agency 2021 | All Rights Reserved</p>
                         </div>
                     </div>
                     </div>
