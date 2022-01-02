@@ -1,5 +1,4 @@
 // import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import Service from "./components/Home/Service/Service.js";
 import Login from "./components/Home/Login/Login/Ligin.js";
