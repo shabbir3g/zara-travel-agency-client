@@ -18,9 +18,9 @@ const Service = () => {
                                   <img className="services-img" src="" alt="" />
 
                                 </div>
-                               <h3 className="services-title">Web Developmentt</h3>
+                               <h3 className="services-title">Web Development</h3>
                                <p>
-                                   I am development static and dynamic websites as per your requirements,"web worlds's home"
+                                   I am development static and dynamic websites per your requirements,"web worlds's home"
                                </p>
                             </div>
                         </Col>
