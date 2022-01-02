@@ -18,7 +18,7 @@ const Navigation = () => {
 
 
 
-        <Navbar className="header-navbar" collapseOnSelect expand="lg" >
+        <Navbar className="header-navbar header-top-fixed" collapseOnSelect expand="lg" >
         <Container className="header-container">
         <Navbar.Brand as={Link} to="/">
         <img
