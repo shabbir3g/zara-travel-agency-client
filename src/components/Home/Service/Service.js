@@ -11,6 +11,7 @@ const Service = () => {
                 
                  <Container className="pt-5 pb-4">
                     <h2 className='services-head'>Our Services</h2>
+                    <p className='services-head'>This is paragraph from mostafiz</p>
                     <Row>
                         <Col lg={4} md={6} sm={12} >
                             <div className='box text-center'>
