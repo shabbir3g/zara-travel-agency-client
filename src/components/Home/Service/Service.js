@@ -34,7 +34,7 @@ const Service = () => {
                   </Card.Text>
 
                   <Link className="card-btn" to="#">
-                    Booking Now
+                    Add Cart
                   </Link>
                 </Card.Body>
               </Card>
