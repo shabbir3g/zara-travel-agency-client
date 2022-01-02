@@ -1,58 +1,59 @@
-import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import "./service.css"
-// import web from '../../asset/images/web.png' ;
-// import design from '../../asset/images/design.png' ;
-// import app from '../../asset/images/app1.png' ;
+import React, { useEffect, useState } from "react";
+import { Card, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./service.css";
 
 const Service = () => {
-    return (
-        <div className="bg-service">    
-                
-                 <Container className="pt-5 pb-4">
-                    <h2 className='services-head'>Our Services</h2>
-                    <p className='services-head'>This is paragraph from mostafiz</p>
-                    <Row>
-                        <Col lg={4} md={6} sm={12} >
-                            <div className='box text-center'>
-                                <div className='ser-img'>
-                                  <img className="services-img" src="" alt="" />
+  const [service, setService] = useState([]);
 
-                                </div>
-                               <h3 className="services-title">Web Development</h3>
-                               <p>
-                                   I am development static and dynamic websites in your requirements,"web worlds's home"
-                               </p>
-                            </div>
-                        </Col>
-                        <Col  lg={4} md={6} sm={12}>
-                          <div className='box text-center'>
-                          <div className='ser-img'>
-                                  <img className="services-img" src="" alt="" />
+  useEffect(() => {
+    fetch("/fakeData.json")
+      .then((res) => res.json())
+      .then((data) => setService(data));
+  }, []);
+  return (
+    <div className="bg-service">
+      <Container fluid className="pt-5 pb-4">
+        <h2 className="services-head">Our Latest Services </h2>
+        <Row xs={1} md={3} className="g-4">
+          {service.map((service, index) => (
+            <Col>
+              <Card className="box text-center">
+                <Card.Img
+                  className="services-img"
+                  variant="top"
+                  src={service.image}
+                />
+                <Card.Body>
+                  <Card.Title className="services-title">
+                    {service.title}
+                  </Card.Title>
+                  <Card.Text className="mb-5">
+                    <p> {service.description.slice(0, 90)}</p>
+                    <h5 className="mt-3">Cost: {service.cost}</h5>
+                  </Card.Text>
 
-                                </div>
-                           <h3 className="services-title">Graphics Design</h3>
-                            <p>
-                               I design modern user interface and other graphical components for your business and institutions.
-                            </p>
-                          </div>
-                        </Col>
-                        <Col  lg={4} md={6} sm={12} >
-                          <div className='box text-center'>
-                          <div className='ser-img'>
-                                  <img className="services-img" src="" alt="" />
+                  <Link className="card-btn" to="#">
+                    Add Cart
+                  </Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+        {/* <Row xs={3}>
+                    {
+                            service?.map((service, index) => <ServiceCard
+                            services={service}
+                            key={index}
+                            
+                            ></ServiceCard>)
+                    } */}
 
-                            </div>
-                           <h3 className="services-title">App Development</h3>
-                           <p>
-                               I build native and cross platform mobile app for your business and institution as your requirements.
-                           </p>
-                          </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </div> 
-    );
+        {/* </Row> */}
+      </Container>
+    </div>
+  );
 };
 
 export default Service;
