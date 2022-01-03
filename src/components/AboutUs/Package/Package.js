@@ -11,7 +11,7 @@ const Package = () => {
             <div className="mb-5">
               <h1 style={{ fontSize: "48px" }}>
                 Why Package Book With{" "}
-                <span style={{ color: "red" }}>TourX Pro?</span>
+                <span style={{ color: "#ff7602" }}>TourX Pro?</span>
               </h1>
             </div>
             <div className="d-flex align-items-center border rounded mb-5 p-3">

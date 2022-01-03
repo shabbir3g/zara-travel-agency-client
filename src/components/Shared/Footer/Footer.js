@@ -24,13 +24,13 @@ const Linkedin = <FontAwesomeIcon icon={faLinkedin} />
 const Footer = () => {
     return (
         <div>
-            <footer className="mt-5">
+            <footer>
                 <div className="bd-travel-footer">
                     <div className="container bd-travel-p-60-60">
                     <div className="row">
                         <div className="col-md-4 col-lg-4">
                         <img className="bd-travel-footer-logo" src={logo} alt="Kinsley" />
-                        <div className="bd-travel-footer-about">BD Travel Agency is a powerful flagship camera drone equipped with a 4/3 CMOS Hasselblad camera to facilitate professional-level imaging. It also offers omnidirectional obstacle sensing for a smooth flight experience</div>
+                        <div className="bd-travel-footer-about">BD Travel Agency is a powerful flagship camera drone equipped with a 4/3 CMOS Hasselblad camera to facilitate professional-level imaging. It also offers omnidirectional obstacle.</div>
                         <ul className="bd-travel-footer-social">
                             <li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer">{Facebook}</a></li>
                             <li><a href="https://www.twitter.com/" target="_blank" rel="noreferrer">{Twitter}</a></li>
@@ -45,7 +45,6 @@ const Footer = () => {
                         <ul className="bd-travel-footer-menu">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/">About us</Link></li>
-                            <li><Link to="/">Drone</Link></li>
                             <li><Link to="/">Products</Link></li>
                             <li><Link to="/">Contact Us</Link></li>
                         </ul>
@@ -56,7 +55,6 @@ const Footer = () => {
                             <li><Link to="/">Privacy policy</Link></li>
                             <li><Link to="/">Help center</Link></li>
                             <li><Link to="/">Work with us</Link></li>
-                            <li><Link to="/">Job Services</Link></li>
                             <li><Link to="/">Terms & Conditions</Link></li>
                         </ul>
                         </div>

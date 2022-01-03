@@ -1,10 +1,10 @@
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faHandPointRight } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import about from "../../../images/tour guide/about.jpg";
 
-const Facebook = <FontAwesomeIcon icon={faFacebook} />;
+const HandPointRight = <FontAwesomeIcon icon={faHandPointRight} />;
 
 const padding = {
   fontSize: "16px",
@@ -29,18 +29,18 @@ const OurJourney = () => {
             <div className="d-flex pt-3 pb-3">
               <div className="w-100">
                 <ul style={{ listStyle: "none", paddingLeft: "0px" }}>
-                  <li style={padding}>{Facebook} First Class Flights</li>
-                  <li style={padding}>First Class Flights</li>
-                  <li style={padding}>Handpicked Hotels</li>
-                  <li style={padding}>10 Languages Available</li>
+                  <li style={padding}>{HandPointRight} First Class Flights</li>
+                  <li style={padding}>{HandPointRight} First Class Flights</li>
+                  <li style={padding}>{HandPointRight} Handpicked Hotels</li>
+                  <li style={padding}>{HandPointRight} 10 Languages Available</li>
                 </ul>
               </div>
               <div className="w-100">
                 <ul style={{ listStyle: "none", paddingLeft: "0px" }}>
-                  <li style={padding}>5 Star Accommodations</li>
-                  <li style={padding}>Latest Model Vehicles</li>
-                  <li style={padding}>Accesibility Managment</li>
-                  <li style={padding}>+120 Premium City Tours</li>
+                  <li style={padding}>{HandPointRight} 5 Star Accommodations</li>
+                  <li style={padding}>{HandPointRight} Latest Model Vehicles</li>
+                  <li style={padding}>{HandPointRight} Accesibility Managment</li>
+                  <li style={padding}>{HandPointRight} +120 Premium City Tours</li>
                 </ul>
               </div>
             </div>

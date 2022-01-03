@@ -28,7 +28,7 @@ const TourGuide = () => {
         </div>
         <div>
           <Row>
-            <Col style={{ textAlign: "center" }} xs="12" md="6" lg="4">
+            <Col style={{ textAlign: "center" }} xs="12" md="4" lg="4">
               <img src={sakura} alt="" />
               <h3>Sakura Chen</h3>
               <h5>Tour Guide</h5>
@@ -41,7 +41,7 @@ const TourGuide = () => {
                 </ul>
               </div>
             </Col>
-            <Col style={{ textAlign: "center" }} xs="12" md="6" lg="4">
+            <Col style={{ textAlign: "center" }} xs="12" md="4" lg="4">
               <img src={nabila} alt="" />
               <h3>Sakura Chen</h3>
               <h5>Tour Guide</h5>
@@ -54,7 +54,7 @@ const TourGuide = () => {
                 </ul>
               </div>
             </Col>
-            <Col style={{ textAlign: "center" }} xs="12" md="6" lg="4">
+            <Col style={{ textAlign: "center" }} xs="12" md="4" lg="4">
               <img src={jonson} alt="" />
               <h3>Sakura Chen</h3>
               <h5>Tour Guide</h5>

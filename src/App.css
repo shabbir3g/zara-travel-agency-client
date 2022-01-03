@@ -158,10 +158,10 @@ nav.dashboard-menu ul li a:hover {
   background: #0a3d62;
   opacity: 0.9;
 }
-
 .dashboard-sidebar {
   padding: 0 !important;
   height: 100vh;
+  margin-top: 35px;
 }
 nav.dashboard-menu ul li a span {
   margin-left: 10px;

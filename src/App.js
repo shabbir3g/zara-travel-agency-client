@@ -17,6 +17,7 @@ import Pay from "./components/Deshboard/Pay/Pay.js";
 import UserReview from "./components/Deshboard/UserReview/UserReview.js";
 import AboutUs from "./components/AboutUs/AboutUs/AboutUs.js";
 import NotFound from "./components/NotFound/NotFound"
+import ContactUs from './components/ContactUs/ContactUs/ContactUs';
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/home" element={<Home /> } />
           <Route path="/service" element={<Service />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
