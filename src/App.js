@@ -4,7 +4,6 @@ import Service from "./components/Home/Service/Service.js";
 import Login from "./components/Home/Login/Login/Login.js";
 import Register from "./components/Home/Login/Register/Register.js";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider.js";
-<<<<<<< HEAD
 import Home from "./components/Home/Home/Home.js";
 
 import AddProduct from "./components/Deshboard/AddProduct/AddProduct.js";
@@ -17,13 +16,11 @@ import MyOrders from "./components/Deshboard/MyOrders/MyOrders.js";
 import Pay from "./components/Deshboard/Pay/Pay.js";
 import UserReview from "./components/Deshboard/UserReview/UserReview.js";
 import NotFound from './components/NotFound/NotFound';
+import Cart from './components/Cart/Cart';
+import Order from './components/Order/Order';
+import PrivetRoute from './components/Home/Login/PrivetRoute/PrivetRoute';
 
 
-=======
-import Order from "./components/Order/Order.js";
-import Cart from "./components/Cart/Cart.js";
-import PrivetRoute from "../src/components/Home/Login/PrivetRoute/PrivetRoute";
->>>>>>> fakedata
 
 
 function App() {
