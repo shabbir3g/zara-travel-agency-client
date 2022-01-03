@@ -8,17 +8,14 @@ import TopHeader from '../TopHeader/TopHeader';
 
 const Navigation = () => {
     const {user} = useAuth();
-
-
+    let navheight;
     return (
         <div className="header-area">
-
-      
         <TopHeader page={"frontend"}></TopHeader>
 
+        { user.email ? navheight = '35px' :  navheight = '' }
+            <Navbar style={{top: navheight}}  className="header-navbar header-top-fixed" collapseOnSelect expand="lg" >
 
-
-        <Navbar className="header-navbar header-top-fixed" collapseOnSelect expand="lg" >
         <Container className="header-container">
         <Navbar.Brand as={Link} to="/">
         <img
