@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Web site created using create-react-app" />
@@ -41,6 +41,26 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript">
+    
+        jQuery(function(){
+			 var shrinkHeader = 200;
+            jQuery(window).scroll(function() {
+            var scroll = getCurrentScroll();
+              if ( scroll >= shrinkHeader ) {
+                jQuery('.header-top-fixed').addClass('shrink');
+              }
+              else {
+                jQuery('.header-top-fixed').removeClass('shrink');
+              }
+            });
+          function getCurrentScroll() {
+            return window.pageYOffset || document.documentElement.scrollTop;
+            }
+
+          });
+    </script>
 </body>
 
 </html>
