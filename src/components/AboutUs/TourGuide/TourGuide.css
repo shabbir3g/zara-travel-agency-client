@@ -1,0 +1,28 @@
+ul.bd-travel-tourguide-social {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+ul.bd-travel-tourguide-social li {
+  display: inline-block;
+}
+ul.bd-travel-tourguide-social li a {
+  display: block;
+  color: #8588a2;
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  text-align: center;
+  padding: 7px;
+  border-radius: 50%;
+  border: 2px solid #8588a2;
+  transition-duration: 0.5s;
+}
+ul.bd-travel-tourguide-social li a:hover {
+  background-color: #8588a2;
+  color: #fff;
+  border: 2px solid #8588a2;
+}
+ul.bd-travel-tourguide-social li a svg {
+  font-size: 20px;
+}

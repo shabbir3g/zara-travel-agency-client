@@ -15,6 +15,7 @@ import ManageProducts from "./components/Deshboard/ManageProducts/ManageProducts
 import MyOrders from "./components/Deshboard/MyOrders/MyOrders.js";
 import Pay from "./components/Deshboard/Pay/Pay.js";
 import UserReview from "./components/Deshboard/UserReview/UserReview.js";
+import AboutUs from "./components/AboutUs/AboutUs/AboutUs.js";
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" element={ <Home /> } />
           <Route path="/home" element={<Home /> } />
           <Route path="/service" element={<Service />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
