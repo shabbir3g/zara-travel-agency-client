@@ -3,7 +3,7 @@ import {
     Link,
     Outlet
 } from "react-router-dom";
-// import TopHeader from '../../Shared/TopHeader/TopHeader';
+import TopHeader from '../../Shared/TopHeader/TopHeader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarPlus, faClipboard, faHandHoldingUsd, faShoppingBag, faTachometerAlt, faTasks, faTools, faUsersCog } from '@fortawesome/free-solid-svg-icons'
 
@@ -20,7 +20,7 @@ const Dashboard = () => {
     // const { admin } = useAuth();
     return (
         <div>
-            {/* <TopHeader page={"dahaboard"}></TopHeader> */}
+            { <TopHeader page={"dahaboard"}></TopHeader> }
             <div className="container-fluid">
                 <div className="row">
                     <div className="dashboard-sidebar col-md-2 bg-dark text-light">
