@@ -14,7 +14,7 @@ const DashboardHome = () => {
     const [allUser, setAllUser] = useState([]);
 
     useEffect(() => {
-        const url = `https://whispering-lake-79289.herokuapp.com/users`;
+        const url = `https://dry-shelf-35127.herokuapp.com/users`;
         fetch(url)
             .then(res => res.json())
             .then(data => setAllUser(data))
@@ -23,7 +23,7 @@ const DashboardHome = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const url = `https://whispering-lake-79289.herokuapp.com/products`;
+        const url = `https://dry-shelf-35127.herokuapp.com/services`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))
@@ -34,7 +34,7 @@ const DashboardHome = () => {
 
 
     useEffect(() => {
-        const url = `https://whispering-lake-79289.herokuapp.com/review`;
+        const url = `https://dry-shelf-35127.herokuapp.com/review`;
         fetch(url)
             .then(res => res.json())
             .then(data => setReviews(data))
@@ -43,7 +43,7 @@ const DashboardHome = () => {
     const [orders, setOrders] = useState();
 
     useEffect(() => {
-        fetch(`https://whispering-lake-79289.herokuapp.com/my-orders`)
+        fetch(`https://dry-shelf-35127.herokuapp.com/my-orders`)
             .then((res) => res.json())
             .then((data) => setOrders(data))
 

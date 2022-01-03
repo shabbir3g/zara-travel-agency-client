@@ -19,16 +19,13 @@ const UserReview = () => {
         data.email = user.email;
         data.photo = user.photoURL;
 
-        axios.post('https://whispering-lake-79289.herokuapp.com/review', data)
+        axios.post('https://dry-shelf-35127.herokuapp.com/review', data)
             .then(res => {
                 if (res.data.insertedId) {
                     setSuccess(true);
                     reset();
                 }
             })
-
-
-
     }
 
     const handleReviewCange = (fullSymbol) => {
@@ -42,7 +39,7 @@ const UserReview = () => {
             <h2 className="text-center mt-5">Review</h2>
             <div className="add-review">
                 <Container>
-                    <Form >
+                    <Form onSubmit={handleSubmit(onSubmit)}>
                         <Row className="mb-3">
                             <Form.Group as={Col} controlId="RoomSize">
                                 <Form.Label><b>Your Name</b></Form.Label>
