@@ -14,7 +14,7 @@ const Order = () => {
   }, [order]);
   
   const orderDetail = order.filter((order) => order.id === parseInt(id));
-  const singleOrder = id ? order.find((i) => i.id === id) : 0;
+  
 
   // add cart
   const [count, setCount] = useState(1);
