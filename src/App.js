@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Service from "./components/Home/Service/Service.js";
 import Login from "./components/Home/Login/Login/Login.js";
@@ -16,6 +16,7 @@ import MyOrders from "./components/Deshboard/MyOrders/MyOrders.js";
 import Pay from "./components/Deshboard/Pay/Pay.js";
 import UserReview from "./components/Deshboard/UserReview/UserReview.js";
 import AboutUs from "./components/AboutUs/AboutUs/AboutUs.js";
+import NotFound from "./components/NotFound/NotFound"
 
 
 
@@ -42,6 +43,7 @@ function App() {
           <Route path={`/dashboard/manageProducts`} element={<ManageProducts />} />
           <Route path={`/dashboard/pay`} element={<Pay />} />
         </Route>
+        <Route path="*" element={  <NotFound /> } />
 
         </Routes>
       </AuthProvider>

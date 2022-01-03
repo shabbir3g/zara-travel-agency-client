@@ -109,6 +109,9 @@ h1.title-main {
   min-height: 35px;
   display: flex;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .st-top-header-admin {

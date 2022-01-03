@@ -33,24 +33,15 @@ const Service = () => {
                     <h5 className="mt-3">Cost: {service.cost}</h5>
                   </Card.Text>
 
-                  <Link className="card-btn" to="#">
-                    Add Cart
+                  <Link className="card-btn" to={`/order/${service.id}`}>
+                    Order Now
                   </Link>
                 </Card.Body>
               </Card>
             </Col>
           ))}
         </Row>
-        {/* <Row xs={3}>
-                    {
-                            service?.map((service, index) => <ServiceCard
-                            services={service}
-                            key={index}
-                            
-                            ></ServiceCard>)
-                    } */}
-
-        {/* </Row> */}
+       
       </Container>
     </div>
   );
