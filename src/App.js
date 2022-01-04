@@ -18,6 +18,9 @@ import UserReview from "./components/Deshboard/UserReview/UserReview.js";
 import AboutUs from "./components/AboutUs/AboutUs/AboutUs.js";
 import NotFound from "./components/NotFound/NotFound"
 import ContactUs from './components/ContactUs/ContactUs/ContactUs';
+import Cart from './components/Cart/Cart';
+import Order from './components/Order/Order';
+import PrivetRoute from './components/Home/Login/PrivetRoute/PrivetRoute';
 
 
 
@@ -30,10 +33,13 @@ function App() {
           <Route path="/" element={ <Home /> } />
           <Route path="/home" element={<Home /> } />
           <Route path="/service" element={<Service />} />
+          <Route path="/order/:id" element={<Order />} />
+          <Route path="/addCart/:id" element={<PrivetRoute><Cart /></PrivetRoute>} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
 
           <Route path="/dashboard" element={<Dashboard></Dashboard>}>
           <Route exact path="/dashboard" element={<DashboardHome />} />
