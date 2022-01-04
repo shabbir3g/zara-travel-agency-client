@@ -13,7 +13,7 @@ const Service = () => {
   }, []);
   return (
     <div className="bg-service">
-      <Container fluid className="pt-5 pb-4">
+      <Container className="pt-5 pb-4">
         <h2 className="services-head">Our Latest Services </h2>
         <Row xs={1} md={3} className="g-4">
           {service.map((service, index) => (
@@ -28,14 +28,18 @@ const Service = () => {
                   <Card.Title className="services-title">
                     {service.title}
                   </Card.Title>
-                  <Card.Text className="mb-5">
-                    <p> {service.description.slice(0, 90)}</p>
-                    <h5 className="mt-3">Cost: {service.cost}</h5>
-                  </Card.Text>
+                  <p> {service.description.slice(0, 85)}</p>
+                 <div className="service-meta"> 
+               
+                 <Card.Text>
+                      <h5>Cost: {service.cost}</h5>
+                    </Card.Text>
+                
 
-                  <Link className="card-btn" to={`/order/${service.id}`}>
-                    Order Now
-                  </Link>
+                    <Link className="card-btn" to={`/order/${service.id}`}>
+                      Order Now
+                    </Link>
+                 </div>
                 </Card.Body>
               </Card>
             </Col>
