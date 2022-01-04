@@ -42,15 +42,15 @@ function App() {
 
 
           <Route path="/dashboard" element={<Dashboard></Dashboard>}>
-          <Route exact path="/dashboard" element={<DashboardHome />} />
-          <Route path={`/dashboard/myOrder`} element={<MyOrders />} />
-          <Route path={`/dashboard/addReview`} element={<UserReview />} />
-          <Route path={`/dashboard/addProduct`} element={<AddProduct />} />
-          <Route path={`/dashboard/makeAdmin`} element={<MakeAdmin />} />
-          <Route path="/dashboard/manageAllOrders" element={<ManageAllOrders />} />
-          <Route path={`/dashboard/manageProducts`} element={<ManageProducts />} />
-          <Route path={`/dashboard/pay`} element={<Pay />} />
-        </Route>
+            <Route exact path="/dashboard" element={<DashboardHome />} />
+            <Route path={`/dashboard/myOrder`} element={<MyOrders />} />
+            <Route path={`/dashboard/addReview`} element={<UserReview />} />
+            <Route path={`/dashboard/addProduct`} element={<AddProduct />} />
+            <Route path={`/dashboard/makeAdmin`} element={<MakeAdmin />} />
+            <Route path="/dashboard/manageAllOrders" element={<ManageAllOrders />} />
+            <Route path={`/dashboard/manageProducts`} element={<ManageProducts />} />
+            <Route path={`/dashboard/pay`} element={<Pay />} />
+          </Route>
         <Route path="*" element={  <NotFound /> } />
 
         </Routes>
