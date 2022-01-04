@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Footer from "../../Shared/Footer/Footer";
 import Navigation from "../../Shared/Navigation/Navigation";
 import CompanyLogo from "../CompanyLogo/CompanyLogo";
@@ -7,12 +7,36 @@ import Contact from "../Contact/Contact";
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import { faEnvelope, faMapMarker, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import emailjs from "emailjs-com";
 
 const Phone = <FontAwesomeIcon icon={faPhone} />;
 const map = <FontAwesomeIcon icon={faMapMarker} />;
 const Envelope = <FontAwesomeIcon icon={faEnvelope} />;
 
 const ContactUs = () => {
+    const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_aj2gygt",
+        "template_10un57o",
+        form.current,
+        "user_FVv0JnRZ04GmOBVeo2Y1M"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
     <div>
       <Navigation></Navigation>
@@ -21,22 +45,22 @@ const ContactUs = () => {
                 <Container> 
                     <Row> 
                     <Col xs={12} lg="8">
-                        <div id="contact-form">
+                        <form ref={form} onSubmit={sendEmail} id="contact-form">
                             <div className="row contact-row">
                             <div className="col-md-6 contact-name">
                                 <input name="name" id="name" type="text" placeholder="Name*" />
                             </div>
                             <div className="col-md-6 contact-email">
-                                <input name="mail" id="mail" type="email" placeholder="E-mail*" />
+                                <input name="email" id="mail" type="email" placeholder="E-mail*" />
                             </div>
                             </div>
 
                             <input name="subject" id="subject" type="text" placeholder="Subject" /> 
-                            <textarea name="comment" id="comment" placeholder="Message"></textarea>
+                            <textarea name="message" id="comment" placeholder="Message"></textarea>
                           
-                            <Button size="md" className="zara-btn" variant="primary" >Send Message</Button>
+                            <Button type="submit" value="Send" size="md" className="zara-btn" variant="primary" >Send Message</Button>
                             <div id="msg" className="message"></div>
-                            </div>
+                        </form>
                         </Col>
                         <Col xs={12} lg="4">
                             <h5>Get in Touch</h5>

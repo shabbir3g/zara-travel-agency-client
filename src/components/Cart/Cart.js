@@ -1,7 +1,9 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 import "./cart.css";
 
 const Cart = () => {
+  const {id} = useParams();
   return (
     <div>
       <div className="order-container">
@@ -140,8 +142,11 @@ const Cart = () => {
             <br />
             <div className="place-order-button">
             
-             <button className="place-button">
-                  Payment Here</button>
+            <button className="place-button">
+              <Link className="order-button" active to={`/dashboard/myOrder/${id}`}>
+                  Payment Here
+              </Link>
+            </button>
            
             </div>
           </form>
