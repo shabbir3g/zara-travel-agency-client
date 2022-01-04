@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner, Table } from 'react-bootstrap';
-// import useAuth from '../../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -8,32 +8,32 @@ const Trash = <FontAwesomeIcon icon={faTrash} />;
 
 const MyOrders = () => {
 
-    // const { user, isLoading } = useAuth();
+    const { user, isLoading } = useAuth();
     const [orders, setOrders] = useState([]);
 
 
 
-    // useEffect(() => {
-    //     fetch(`https://whispering-lake-79289.herokuapp.com/my-orders/${user?.email}`)
-    //         .then((res) => res.json())
-    //         .then((data) => setOrders(data))
+    useEffect(() => {
+        fetch(`https://dry-shelf-35127.herokuapp.com/my-orders/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => setOrders(data))
 
-    // }, [user?.email]);
+    }, [user?.email]);
 
 
-    // if (isLoading) {
-    //     return <div>
-    //         <div className="text-center">
-    //             <Spinner animation="border" variant="danger" />
-    //         </div>
-    //     </div>
-    // }
+    if (isLoading) {
+        return <div>
+            <div className="text-center">
+                <Spinner animation="border" variant="danger" />
+            </div>
+        </div>
+    }
 
 
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, You want to delete');
         if (proceed) {
-            const url = `https://whispering-lake-79289.herokuapp.com/my-orders/${id}`;
+            const url = `https://dry-shelf-35127.herokuapp.com/my-orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
 

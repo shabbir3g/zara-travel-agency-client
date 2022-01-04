@@ -43,7 +43,7 @@ function App() {
 
           <Route path="/dashboard" element={<Dashboard></Dashboard>}>
           <Route exact path="/dashboard" element={<DashboardHome />} />
-          <Route path={`/dashboard/myOrder/:id`} element={<MyOrders />} />
+          <Route path={`/dashboard/myOrder`} element={<MyOrders />} />
           <Route path={`/dashboard/addReview`} element={<UserReview />} />
           <Route path={`/dashboard/addProduct`} element={<AddProduct />} />
           <Route path={`/dashboard/makeAdmin`} element={<MakeAdmin />} />
