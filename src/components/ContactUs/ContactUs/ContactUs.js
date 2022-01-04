@@ -34,7 +34,6 @@ const ContactUs = () => {
           console.log(error.text);
         }
       );
-      
     e.target.reset();
   };
 
