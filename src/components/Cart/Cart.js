@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
+=======
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+>>>>>>> 512b27f2435e18a044cb1dfb344d1c2152264c99
 import "./cart.css";
 import { useNavigate,useParams } from "react-router-dom";
 
 const Cart = () => {
+<<<<<<< HEAD
   let { id } = useParams();
   
   //define navigate function
@@ -62,6 +68,9 @@ const Cart = () => {
       });
     event.preventDefault();
   };
+=======
+  const {id} = useParams();
+>>>>>>> 512b27f2435e18a044cb1dfb344d1c2152264c99
   return (
     <div>
       <div className="order-container">
@@ -224,7 +233,17 @@ const Cart = () => {
 
             <br />
             <div className="place-order-button">
+<<<<<<< HEAD
               <button className="place-button">Payment Here</button>
+=======
+            
+            <button className="place-button">
+              <Link className="order-button" active to={`/dashboard/myOrder/${id}`}>
+                  Payment Here
+              </Link>
+            </button>
+           
+>>>>>>> 512b27f2435e18a044cb1dfb344d1c2152264c99
             </div>
           </form>
         </div>
