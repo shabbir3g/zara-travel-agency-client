@@ -1,17 +1,73 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./cart.css";
+import { useNavigate,useParams } from "react-router-dom";
 
 const Cart = () => {
+  let { id } = useParams();
+  
+  //define navigate function
+  const navigate = useNavigate();
+
+  const [Input, setInput] = useState({
+    firstName: "",
+    lastName: "",
+    streetAddress: "",
+    City: "",
+    townName: "",
+    district: "",
+    Postcode: "",
+    mobileNumber: "",
+    email: "",
+    Price: id,
+  });
+
+  // console.log(Input.Price);
+
+  // this function is used to clear all state property after form submission
+  const clearInput = () => {
+    return setInput({
+      ...Input,
+      firstName: "",
+      lastName: "",
+      streetAddress: "",
+      City: "",
+      townName: "",
+      district: "",
+      Postcode: "",
+      mobileNumber: "",
+      email: "",
+      Price: "",
+    });
+  };
+
+  const onSubmit = (event) => {
+    console.log(Input);
+
+    // data send to the server
+    fetch("https://rocky-fjord-43160.herokuapp.com/order", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      // body: JSON.stringify(body),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          // <Alert variant="success">Order Successfully</Alert>
+          alert("Order successfully ");
+          clearInput();
+          navigate("/dashboard/myOrder");
+        }
+      });
+    event.preventDefault();
+  };
   return (
     <div>
       <div className="order-container">
         <div className="order-main-container">
           <p className="title">Billing details</p>
-          <form
-            onSubmit={() => {
-              alert("form submission!");
-            }}
-          >
+          <form onSubmit={onSubmit}>
             {/* name division */}
             <div className="first-last-name">
               <div className="name-input">
@@ -21,6 +77,9 @@ const Cart = () => {
                   id="first-name"
                   placeholder="First Name"
                   required
+                  onChange={(event) => {
+                    setInput({ ...Input, firstName: event.target.value });
+                  }}
                   min="3"
                   max="15"
                 />
@@ -31,6 +90,9 @@ const Cart = () => {
                 <input
                   type="text"
                   id="Last-name"
+                  onChange={(event) => {
+                    setInput({ ...Input, lastName: event.target.value });
+                  }}
                   placeholder="Last Name"
                   required
                   min="3"
@@ -55,12 +117,18 @@ const Cart = () => {
               <input
                 required
                 type="text"
+                onChange={(event) => {
+                  setInput({ ...Input, streetAddress: event.target.value });
+                }}
                 id="Street-name"
                 placeholder="House number and street number *"
                 max="30"
               />
               <input
                 type="text"
+                onChange={(event) => {
+                  setInput({ ...Input, City: event.target.value });
+                }}
                 placeholder="Apartment, suite, unit, etc. (optional)"
                 max="30"
               />
@@ -74,6 +142,9 @@ const Cart = () => {
                 required
                 type="text"
                 id="town-name"
+                onChange={(event) => {
+                  setInput({ ...Input, townName: event.target.value });
+                }}
                 placeholder="Town / City name"
                 max="20"
               />
@@ -83,7 +154,12 @@ const Cart = () => {
                 District
                 <span style={{ color: "red", fontSize: "25px" }}> *</span>
               </label>
-              <select id="district-name">
+              <select
+                id="district-name"
+                onChange={(event) => {
+                  setInput({ ...Input, district: event.target.value });
+                }}
+              >
                 <option value="select district">Select a district</option>
                 <option value="Dhaka ">Dhaka </option>
                 <option value="Barguna ">Barguna </option>
@@ -110,6 +186,9 @@ const Cart = () => {
                 id="Postcode / ZIP (optional)"
                 placeholder="Company name"
                 max="10"
+                onChange={(event) => {
+                  setInput({ ...Input, Postcode: event.target.value });
+                }}
               />
             </div>
             <div className="company-name">
@@ -121,6 +200,9 @@ const Cart = () => {
                 type="text"
                 id="Billing Mobile Number *"
                 placeholder="Billing Mobile Number"
+                onChange={(event) => {
+                  setInput({ ...Input, mobileNumber: event.target.value });
+                }}
                 required
               />
             </div>
@@ -131,18 +213,18 @@ const Cart = () => {
               </label>
               <input
                 type="email"
+                onChange={(event) => {
+                  setInput({ ...Input, email: event.target.value });
+                }}
                 id="Billing Email"
                 placeholder="Billing Email"
                 required
               />
             </div>
-           
+
             <br />
             <div className="place-order-button">
-            
-             <button className="place-button">
-                  Payment Here</button>
-           
+              <button className="place-button">Payment Here</button>
             </div>
           </form>
         </div>
