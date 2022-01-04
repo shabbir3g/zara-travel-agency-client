@@ -1,6 +1,5 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-import Service from "./components/Home/Service/Service.js";
 import Login from "./components/Home/Login/Login/Login.js";
 import Register from "./components/Home/Login/Register/Register.js";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider.js";
@@ -21,6 +20,7 @@ import ContactUs from './components/ContactUs/ContactUs/ContactUs';
 import Cart from './components/Cart/Cart';
 import Order from './components/Order/Order';
 import PrivetRoute from './components/Home/Login/PrivetRoute/PrivetRoute';
+import Services from './components/Services/Services';
 
 
 
@@ -32,7 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="/home" element={<Home /> } />
-          <Route path="/service" element={<Service />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/order/:id" element={<Order />} />
           <Route path="/addCart/:id" element={<PrivetRoute><Cart /></PrivetRoute>} />
           <Route path="/about" element={<AboutUs />} />

@@ -28,21 +28,24 @@ const TourGuide = () => {
         </div>
         <div>
           <Row>
-            <Col style={{ textAlign: "center" }} xs="12" md="4" lg="4">
+            <Col className="tour-guide" xs="12" md="4" lg="4">
               <img src={sakura} alt="" />
-              <h3>Sakura Chen</h3>
-              <h5>Tour Guide</h5>
-              <div>
-                <ul className="bd-travel-tourguide-social">
-                  <li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer">{Facebook}</a></li>
-                  <li><a href="https://www.twitter.com/" target="_blank" rel="noreferrer">{Twitter}</a></li>
-                  <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">{Instagram}</a></li>
-                  <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">{Linkedin}</a></li>
-                </ul>
+              <div className="guide-info"> 
+                <h3>Sakura Chen</h3>
+                <h5>Tour Guide</h5>
+                <div>
+                  <ul className="bd-travel-tourguide-social">
+                    <li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer">{Facebook}</a></li>
+                    <li><a href="https://www.twitter.com/" target="_blank" rel="noreferrer">{Twitter}</a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">{Instagram}</a></li>
+                    <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">{Linkedin}</a></li>
+                  </ul>
+                </div>
               </div>
             </Col>
-            <Col style={{ textAlign: "center" }} xs="12" md="4" lg="4">
+            <Col className="tour-guide" xs="12" md="4" lg="4">
               <img src={nabila} alt="" />
+              <div className="guide-info"> 
               <h3>Sakura Chen</h3>
               <h5>Tour Guide</h5>
               <div>
@@ -53,9 +56,11 @@ const TourGuide = () => {
                   <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">{Linkedin}</a></li>
                 </ul>
               </div>
+              </div>
             </Col>
-            <Col style={{ textAlign: "center" }} xs="12" md="4" lg="4">
+            <Col className="tour-guide" xs="12" md="4" lg="4">
               <img src={jonson} alt="" />
+              <div className="guide-info"> 
               <h3>Sakura Chen</h3>
               <h5>Tour Guide</h5>
               <div>
@@ -65,6 +70,7 @@ const TourGuide = () => {
                   <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">{Instagram}</a></li>
                   <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">{Linkedin}</a></li>
                 </ul>
+              </div>
               </div>
             </Col>
             {/* <Col xs="12" md="6" lg="4">

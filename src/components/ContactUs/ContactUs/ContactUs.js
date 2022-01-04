@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "../../Shared/Footer/Footer";
 import Navigation from "../../Shared/Navigation/Navigation";
 import CompanyLogo from "../CompanyLogo/CompanyLogo";
@@ -15,6 +15,7 @@ const Envelope = <FontAwesomeIcon icon={faEnvelope} />;
 
 const ContactUs = () => {
     const form = useRef();
+    const [success, setSuccess] = useState();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -28,7 +29,7 @@ const ContactUs = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          setSuccess(result.text);
         },
         (error) => {
           console.log(error.text);
@@ -60,6 +61,10 @@ const ContactUs = () => {
                           
                             <Button type="submit" value="Send" size="md" className="zara-btn" variant="primary" >Send Message</Button>
                             <div id="msg" className="message"></div>
+
+                            {success && <div className="alert alert-success mt-4" role="alert">
+                            Your message was sent Successfully
+                        </div>}
                         </form>
                         </Col>
                         <Col xs={12} lg="4">
