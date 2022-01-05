@@ -79,10 +79,10 @@ const MyOrders = () => {
                                 <td className="text-center"><button onClick={() => handleDeleteUser(order?._id)} className="btn btn-link text-danger">{Trash}</button></td>
                                 <td className="text-center">
                                 {order.payment ? (
-                                    "paid"
+                                    <button className="fw-bold btn btn-success">Paid</button>
                                 ) : (
                                     <Link to={`/dashboard/payment/${order._id}`}>
-                                    <button>Pay</button>
+                                    <button className='fw-bold btn btn-primary'>Pay</button>
                                     </Link>
                                 )}
                                 </td>
