@@ -55,12 +55,12 @@ const MyOrders = () => {
                     <thead>
                         <tr>
 
-                            <th>Product Photo</th>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th className="text-center">Status</th>
-                            <th className="text-center">Action</th>
+                            {/* <th>Product Photo</th>
+                            <th>Product Name</th> */}
+                            <th className="text-center">Price</th>
+                            {/* <th className="text-center">Status</th> */}
                             <th className="text-center">Payment</th>
+                            <th className="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,15 +68,15 @@ const MyOrders = () => {
                         {
                             orders?.map((order, index) => <tr key={order._id} >
 
-                                <td><img style={{ width: '100px' }} src={order?.image} alt="product" /></td>
-                                <td>{order?.title}</td>
-                                <td>{order?.Price}</td>
+                                {/* <td><img style={{ width: '100px' }} src={order?.image} alt="product" /></td>
+                                <td>{order?.title}</td> */}
+                                <td className="text-center">{order?.Price}</td>
 
-                                <td className="text-center">
+                                {/* <td className="text-center">
 
                                     <span className={(order?.status === "Pending") ? "text-danger" : "text-success"}>{order?.status}</span>
-                                </td>
-                                <td className="text-center"><button onClick={() => handleDeleteUser(order?._id)} className="btn btn-link text-danger">{Trash}</button></td>
+                                </td> */}
+                                
                                 <td className="text-center">
                                 {order.payment ? (
                                     <button className="fw-bold btn btn-success">Paid</button>
@@ -86,6 +86,7 @@ const MyOrders = () => {
                                     </Link>
                                 )}
                                 </td>
+                                <td className="text-center"><button onClick={() => handleDeleteUser(order?._id)} className="btn btn-link text-danger">{Trash}</button></td>
                             </tr>
 
                             )

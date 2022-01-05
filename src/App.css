@@ -461,3 +461,7 @@ textarea {
     flex-direction: row;
   }
 }
+
+button#button-addon2 {
+  height: 47px;
+}

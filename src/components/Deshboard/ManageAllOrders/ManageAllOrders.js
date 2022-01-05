@@ -26,20 +26,20 @@ const ManageAllOrders = () => {
         </div>
     }
 
-    const handleUpdate = (id) => {
-        const url = `https://dry-shelf-35127.herokuapp.com/udpate/${id}`;
-        fetch(url, {
-            method: 'PUT'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    alert('Product Shipped successfully');
-                }
-            })
+    // const handleUpdate = (id) => {
+    //     const url = `https://dry-shelf-35127.herokuapp.com/udpate/${id}`;
+    //     fetch(url, {
+    //         method: 'PUT'
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if (data.modifiedCount > 0) {
+    //                 alert('Product Shipped successfully');
+    //             }
+    //         })
 
 
-    }
+    // }
 
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, You want to delete');
@@ -73,9 +73,9 @@ const ManageAllOrders = () => {
                             <th>E-mail</th>
                             <th>Phone</th>
                             <th>Address</th>
-                            <th>Product</th>
+                            {/* <th>Product</th> */}
                             <th>Price</th>
-                            <th className="text-center">Status</th>
+                            {/* <th className="text-center">Status</th> */}
                             <th className="text-center">Action</th>
                         </tr>
                     </thead>
@@ -90,13 +90,13 @@ const ManageAllOrders = () => {
                                 <td>{order?.email}</td>
                                 <td>{order?.mobileNumber}</td>
                                 <td>{order?.streetAddress},  {order?.City},  {order?.district}-{order?.Postcode}</td>
-                                <td>{order?.title}</td>
+                                {/* <td>{order?.title}</td> */}
                                 <td>{order?.Price}</td>
 
-                                <td className="text-center">
+                                {/* <td className="text-center">
 
                                     <button onClick={() => handleUpdate(order?._id, order?.status)} className={(order?.status === "Pending") ? "btn btn-danger" : "btn btn-success"}>{order?.status}</button>
-                                </td>
+                                </td> */}
                                 <td className="text-center"><button onClick={() => handleDeleteUser(order?._id)} className="btn btn-link text-danger">{Trash}</button></td>
                             </tr>
 
