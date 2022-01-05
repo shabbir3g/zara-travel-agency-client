@@ -12,7 +12,7 @@ const Order = () => {
   const [selected, setSelected] = useState("Choose");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${_id}`)
+    fetch(`https://dry-shelf-35127.herokuapp.com/services/${_id}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [_id]);
