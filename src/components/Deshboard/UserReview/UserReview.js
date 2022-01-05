@@ -19,7 +19,7 @@ const UserReview = () => {
         data.email = user.email;
         data.photo = user.photoURL;
 
-        axios.post('https://dry-shelf-35127.herokuapp.com/review', data)
+        axios.post('http://localhost:5000/review', data)
             .then(res => {
                 if (res.data.insertedId) {
                     setSuccess(true);

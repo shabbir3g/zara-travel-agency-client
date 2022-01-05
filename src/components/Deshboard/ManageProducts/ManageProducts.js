@@ -14,7 +14,7 @@ const ManageProducts = () => {
 
 
     useEffect(() => {
-        fetch(`https://dry-shelf-35127.herokuapp.com/products`)
+        fetch(`http://localhost:5000/services`)
             .then((res) => res.json())
             .then((data) => setOrders(data))
 
@@ -33,7 +33,7 @@ const ManageProducts = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, You want to delete?');
         if (proceed) {
-            const url = `https://whispering-lake-79289.herokuapp.com/products/${id}`;
+            const url = `http://localhost:5000/services/${id}`;
             fetch(url, {
                 method: 'DELETE'
 
@@ -76,8 +76,8 @@ const ManageProducts = () => {
 
                                 <td><img style={{ width: '100px' }} src={order?.image} alt="product" /></td>
                                 <td>{order?.title}</td>
-                                <td>{order?.desc?.substring(0, 200)}</td>
-                                <td>{order?.price}</td>
+                                <td>{order?.description?.substring(0, 100)}...</td>
+                                <td>{order?.cost}</td>
 
 
                                 <td className="text-center"><button onClick={() => handleDeleteUser(order?._id)} className="btn btn-link text-danger">{Trash}</button></td>
