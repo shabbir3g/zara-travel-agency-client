@@ -30,10 +30,10 @@
   width: 100%px;
   height: 50%px;
   margin: auto;
-  /* border-radius: 50%; */
-
   border: 2px solid #daaa57;
   background-color: rgb(189, 187, 187);
+  height: 230px;
+  object-fit: cover;
 }
 
 .services-img:hover {

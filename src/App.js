@@ -24,9 +24,6 @@ import PrivetRoute from './components/Home/Login/PrivetRoute/PrivetRoute';
 import AdminRoute from './components/Home/Login/AdminRoute/AdminRoute';
 import Services from './components/Services/Services';
 
-
-
-
 function App() {
   return (
     <div className="App">
@@ -41,9 +38,7 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
-
-          <Route path="/dashboard" element={<Dashboard></Dashboard>}>
+          <Route path="/dashboard" element={<PrivetRoute> <Dashboard></Dashboard></PrivetRoute> }>
           <Route exact path="/dashboard" element={<DashboardHome />} />
           <Route path={`/dashboard/myOrder`} element={<MyOrders />} />
           <Route path={`/dashboard/addReview`} element={<UserReview />} />
