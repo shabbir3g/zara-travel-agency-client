@@ -18,7 +18,7 @@ const Banner = () => {
                                 <Col xs={12} lg="6">
                                 <h1>BD Travel Agency</h1>
                                 <p>BD Travel Agency Provide to customer always best quality Travel in budget price. You can get Our service within your budget price</p>
-                                <Link to="/explore"><Button className="zara-btn" variant="primary"  >Explore</Button></Link>
+                                <Link to="/contact"><Button className="zara-btn" variant="primary"  >Contct Us</Button></Link>
                                 </Col>
                                 <Col xs={12} lg="6">
                                 
@@ -33,7 +33,7 @@ const Banner = () => {
                                 <Col xs={12} lg="6">
                                 <h1>BD Travel Agency</h1>
                                 <p>BD Travel Agency Provide to customer always best quality Travel in budget price. You can get Our service within your budget price</p>
-                                <Link to="/explore"><Button className="zara-btn" variant="primary" >Explore</Button></Link>
+                                <Link to="/contact"><Button className="zara-btn" variant="primary"  >Contct Us</Button></Link>
                                 </Col>
                                 <Col xs={12} lg="6">
                                
@@ -48,7 +48,7 @@ const Banner = () => {
                                 <Col xs={12} lg="6">
                                 <h1>BD Travel Agency</h1>
                                 <p>BD Travel Agency Provide to customer always best quality Travel in budget price. You can get Our service within your budget price</p>
-                                <Link to="/explore"><Button className="zara-btn" variant="primary" >Explore</Button></Link>
+                                <Link to="/contact"><Button className="zara-btn" variant="primary"  >Contct Us</Button></Link>
                                 </Col>
                                 <Col xs={12} lg="6">
                                
