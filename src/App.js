@@ -43,7 +43,7 @@ function App() {
           <Route path="/register" element={<Register />} />
 
 
-          <Route path="/dashboard" element={<Dashboard></Dashboard>}>
+          <Route path="/dashboard" element={<PrivetRoute><Dashboard/></PrivetRoute>}>
           <Route exact path="/dashboard" element={<DashboardHome />} />
           <Route path={`/dashboard/myOrder`} element={<MyOrders />} />
           <Route path={`/dashboard/addReview`} element={<UserReview />} />

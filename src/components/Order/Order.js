@@ -39,6 +39,7 @@ const Order = () => {
   }
 
   return (
+  <>
     <div className="container-fluid" style={{ backgroundColor: "#dddddd" }}>
       <div className="row  ">
         <div className="col-lg-6 col-md-12 col-sm-12 mt-3">
@@ -130,6 +131,7 @@ const Order = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
