@@ -16,7 +16,7 @@ const Payment = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/my-orders/${paymentId}`
+      `https://dry-shelf-35127.herokuapp.com/my-orders/${paymentId}`
     )
       .then((res) => res.json())
       .then((data) => setOrders(data));
