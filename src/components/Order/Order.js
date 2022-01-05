@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Footer from "../Shared/Footer/Footer";
+import Navigation from "../Shared/Navigation/Navigation";
 import "./order.css";
+import OrderBanner from "./OrderBanner/OrderBanner";
 
 const Order = () => {
   
@@ -39,14 +42,16 @@ const Order = () => {
   }
 
   return (
-  <>
+    <>
+    <Navigation></Navigation>
+    <OrderBanner></OrderBanner>
     <div className="container-fluid" style={{ backgroundColor: "#dddddd" }}>
       <div className="row  ">
         <div className="col-lg-6 col-md-12 col-sm-12 mt-3">
           {order ? (
             <div  className=" mt-4 mb-4 ">
               <div className=" m-4">
-                <img src={order.image} alt="" />
+                <img style={{width: '100%'}} src={order.image} alt="" />
               </div>
               <div className=" align-items-center"></div>
             </div>
@@ -131,6 +136,7 @@ const Order = () => {
         </div>
       </div>
     </div>
+    <Footer></Footer>
     </>
   );
 };

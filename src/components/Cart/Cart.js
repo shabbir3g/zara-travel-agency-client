@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./cart.css";
 import { useNavigate,useParams } from "react-router-dom";
+import Footer from "../Shared/Footer/Footer";
+import Navigation from "../Shared/Navigation/Navigation";
+import CartBanner from "./CartBanner/CartBanner";
 
 const Cart = () => {
   let { _id } = useParams();
@@ -63,6 +66,9 @@ const Cart = () => {
     event.preventDefault();
   };
   return (
+    <>
+    <Navigation></Navigation>
+    <CartBanner></CartBanner>
     <div>
       <div className="order-container">
         <div className="order-main-container">
@@ -161,6 +167,9 @@ const Cart = () => {
                 }}
               >
                 <option value="select district">Select a district</option>
+                <option value="Pabna ">Pabna </option>
+                <option value="Madaripur ">Madaripur </option>
+                <option value="Bandarban ">Bandarban </option>
                 <option value="Dhaka ">Dhaka </option>
                 <option value="Barguna ">Barguna </option>
                 <option value="Barisal ">Barisal </option>
@@ -230,6 +239,8 @@ const Cart = () => {
         </div>
       </div>
     </div>
+    <Footer></Footer>
+    </>
   );
 };
 

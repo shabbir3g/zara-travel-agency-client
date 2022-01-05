@@ -28,7 +28,7 @@ const CheckoutForm = ({ orders }) => {
     )
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
-  }, [Price]);
+  }, [price]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -83,8 +83,9 @@ const CheckoutForm = ({ orders }) => {
         last4: paymentMethod.card.last4,
         transaction: paymentIntent.client_secret.slice('_secret')[0],
       };
-
+      console.log(payment);
       const url = `https://dry-shelf-35127.herokuapp.com/my-orders/${_id}`;
+      console.log(url);
       fetch(url, {
         method: "PUT",
         headers: {
