@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner, Table } from 'react-bootstrap';
-// import useAuth from '../../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -8,32 +8,32 @@ const Trash = <FontAwesomeIcon icon={faTrash} />;
 
 const ManageProducts = () => {
 
-    // const { user, isLoading } = useAuth();
+    const { user, isLoading } = useAuth();
     const [orders, setOrders] = useState([]);
 
 
 
-    // useEffect(() => {
-    //     fetch(`https://whispering-lake-79289.herokuapp.com/products`)
-    //         .then((res) => res.json())
-    //         .then((data) => setOrders(data))
+    useEffect(() => {
+        fetch(`http://localhost:5000/services`)
+            .then((res) => res.json())
+            .then((data) => setOrders(data))
 
-    // }, [user?.email]);
+    }, [user?.email]);
 
 
-    // if (isLoading) {
-    //     return <div>
-    //         <div className="text-center">
-    //             <Spinner animation="border" variant="danger" />
-    //         </div>
-    //     </div>
-    // }
+    if (isLoading) {
+        return <div>
+            <div className="text-center">
+                <Spinner animation="border" variant="danger" />
+            </div>
+        </div>
+    }
 
 
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, You want to delete?');
         if (proceed) {
-            const url = `https://whispering-lake-79289.herokuapp.com/products/${id}`;
+            const url = `http://localhost:5000/services/${id}`;
             fetch(url, {
                 method: 'DELETE'
 
@@ -76,8 +76,8 @@ const ManageProducts = () => {
 
                                 <td><img style={{ width: '100px' }} src={order?.image} alt="product" /></td>
                                 <td>{order?.title}</td>
-                                <td>{order?.desc?.substring(0, 200)}</td>
-                                <td>{order?.price}</td>
+                                <td>{order?.description?.substring(0, 100)}...</td>
+                                <td>{order?.cost}</td>
 
 
                                 <td className="text-center"><button onClick={() => handleDeleteUser(order?._id)} className="btn btn-link text-danger">{Trash}</button></td>

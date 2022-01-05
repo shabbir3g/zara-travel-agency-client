@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner, Table } from 'react-bootstrap';
-// import useAuth from '../../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -8,26 +8,26 @@ const Trash = <FontAwesomeIcon icon={faTrash} />;
 
 const ManageAllOrders = () => {
 
-    // const { isLoading } = useAuth();
+    const { isLoading } = useAuth();
     const [orders, setOrders] = useState();
 
     useEffect(() => {
-        fetch(`https://whispering-lake-79289.herokuapp.com/my-orders`)
+        fetch(`http://localhost:5000/my-orders`)
             .then((res) => res.json())
             .then((data) => setOrders(data))
 
     }, [orders]);
 
-    // if (isLoading) {
-    //     return <div>
-    //         <div className="text-center">
-    //             <Spinner animation="border" variant="danger" />
-    //         </div>
-    //     </div>
-    // }
+    if (isLoading) {
+        return <div>
+            <div className="text-center">
+                <Spinner animation="border" variant="danger" />
+            </div>
+        </div>
+    }
 
     const handleUpdate = (id) => {
-        const url = `https://whispering-lake-79289.herokuapp.com/udpate/${id}`;
+        const url = `http://localhost:5000/udpate/${id}`;
         fetch(url, {
             method: 'PUT'
         })
@@ -44,7 +44,7 @@ const ManageAllOrders = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, You want to delete');
         if (proceed) {
-            const url = `https://whispering-lake-79289.herokuapp.com/my-orders/${id}`;
+            const url = `http://localhost:5000/my-orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
 
@@ -86,12 +86,12 @@ const ManageAllOrders = () => {
 
 
 
-                                <td>{order?.name}</td>
+                                <td>{order?.firstName} {order?.lastName}</td>
                                 <td>{order?.email}</td>
-                                <td>{order?.phone}</td>
-                                <td>{order?.address},  {order?.district},  {order?.country}-{order?.zip}</td>
+                                <td>{order?.mobileNumber}</td>
+                                <td>{order?.streetAddress},  {order?.City},  {order?.district}-{order?.Postcode}</td>
                                 <td>{order?.title}</td>
-                                <td>{order?.price}</td>
+                                <td>{order?.Price}</td>
 
                                 <td className="text-center">
 

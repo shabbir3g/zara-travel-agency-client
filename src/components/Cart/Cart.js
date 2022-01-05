@@ -1,15 +1,9 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from "react";
-=======
-import React from "react";
-import { Link, useParams } from "react-router-dom";
->>>>>>> 512b27f2435e18a044cb1dfb344d1c2152264c99
+import React, { useState } from "react";
 import "./cart.css";
 import { useNavigate,useParams } from "react-router-dom";
 
 const Cart = () => {
-<<<<<<< HEAD
-  let { id } = useParams();
+  let { _id } = useParams();
   
   //define navigate function
   const navigate = useNavigate();
@@ -24,7 +18,7 @@ const Cart = () => {
     Postcode: "",
     mobileNumber: "",
     email: "",
-    Price: id,
+    Price: _id,
   });
 
   // console.log(Input.Price);
@@ -50,12 +44,12 @@ const Cart = () => {
     console.log(Input);
 
     // data send to the server
-    fetch("https://rocky-fjord-43160.herokuapp.com/order", {
+    fetch("http://localhost:5000/my-orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      // body: JSON.stringify(body),
+      body: JSON.stringify(Input),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -68,9 +62,6 @@ const Cart = () => {
       });
     event.preventDefault();
   };
-=======
-  const {id} = useParams();
->>>>>>> 512b27f2435e18a044cb1dfb344d1c2152264c99
   return (
     <div>
       <div className="order-container">
@@ -233,17 +224,7 @@ const Cart = () => {
 
             <br />
             <div className="place-order-button">
-<<<<<<< HEAD
               <button className="place-button">Payment Here</button>
-=======
-            
-            <button className="place-button">
-              <Link className="order-button" active to={`/dashboard/myOrder/${id}`}>
-                  Payment Here
-              </Link>
-            </button>
-           
->>>>>>> 512b27f2435e18a044cb1dfb344d1c2152264c99
             </div>
           </form>
         </div>

@@ -4,7 +4,7 @@ import "./order.css";
 
 const Order = () => {
   
-  let { id } = useParams();
+  let { _id } = useParams();
 
   const [order, setOrder] = useState([]);
   // add cart
@@ -12,16 +12,14 @@ const Order = () => {
   const [selected, setSelected] = useState("Choose");
 
   useEffect(() => {
-    fetch("/fakeData.json")
+    fetch(`http://localhost:5000/services/${_id}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
-  }, []);
+  }, [_id]);
 
-  const orderDetail = order.find((order) => order.id === parseInt(id));
-
-  const some = orderDetail ? orderDetail.cost : 0;
+  const some = order ? order.cost : 0;
   const totalPrice = some * count;
-  // console.log(totalPrice);
+
 
   // onClick function going here
   const inCrease = () => {
@@ -36,7 +34,7 @@ const Order = () => {
     return setSelected(event.target.value);
   };
 
-  if (!orderDetail) {
+  if (!order) {
     return <h1>your given is not valid</h1>;
   }
 
@@ -44,10 +42,10 @@ const Order = () => {
     <div className="container-fluid" style={{ backgroundColor: "#dddddd" }}>
       <div className="row  ">
         <div className="col-lg-6 col-md-12 col-sm-12 mt-3">
-          {orderDetail ? (
+          {order ? (
             <div  className=" mt-4 mb-4 ">
               <div className=" m-4">
-                <img src={orderDetail.image} alt="" />
+                <img src={order.image} alt="" />
               </div>
               <div className=" align-items-center"></div>
             </div>
@@ -64,12 +62,12 @@ const Order = () => {
               </p>
 
               <div>
-                {orderDetail ? (
+                {order ? (
                   <div className=" mt-4 mb-4 ">
                     <h4 className="text-info fw-bolder">
-                      {orderDetail?.title}
+                      {order?.title}
                     </h4>
-                    <p>Price Per Person: ${orderDetail?.cost * count}</p>
+                    <p>Price Per Person: ${order?.cost * count}</p>
                   </div>
                 ) : (
                   <p>Data Not found</p>

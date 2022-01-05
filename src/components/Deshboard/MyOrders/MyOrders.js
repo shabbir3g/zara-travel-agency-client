@@ -1,39 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner, Table } from 'react-bootstrap';
-// import useAuth from '../../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 const Trash = <FontAwesomeIcon icon={faTrash} />;
 
 const MyOrders = () => {
 
-    // const { user, isLoading } = useAuth();
+    const { user, isLoading } = useAuth();
     const [orders, setOrders] = useState([]);
 
+    useEffect(() => {
+        fetch(`http://localhost:5000/my-orders?email=${user.email}`)
+          .then((res) => res.json())
+          .then((data) => setOrders(data));
+      }, [user.email]);
 
-
-    // useEffect(() => {
-    //     fetch(`https://whispering-lake-79289.herokuapp.com/my-orders/${user?.email}`)
-    //         .then((res) => res.json())
-    //         .then((data) => setOrders(data))
-
-    // }, [user?.email]);
-
-
-    // if (isLoading) {
-    //     return <div>
-    //         <div className="text-center">
-    //             <Spinner animation="border" variant="danger" />
-    //         </div>
-    //     </div>
-    // }
-
+    if (isLoading) {
+        return <div>
+            <div className="text-center">
+                <Spinner animation="border" variant="danger" />
+            </div>
+        </div>
+    }
 
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, You want to delete');
         if (proceed) {
-            const url = `https://whispering-lake-79289.herokuapp.com/my-orders/${id}`;
+            const url = `http://localhost:5000/my-orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
 
@@ -64,6 +60,7 @@ const MyOrders = () => {
                             <th>Price</th>
                             <th className="text-center">Status</th>
                             <th className="text-center">Action</th>
+                            <th className="text-center">Payment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -71,18 +68,24 @@ const MyOrders = () => {
                         {
                             orders?.map((order, index) => <tr key={order._id} >
 
-
-
-
                                 <td><img style={{ width: '100px' }} src={order?.image} alt="product" /></td>
                                 <td>{order?.title}</td>
-                                <td>{order?.price}</td>
+                                <td>{order?.Price}</td>
 
                                 <td className="text-center">
 
                                     <span className={(order?.status === "Pending") ? "text-danger" : "text-success"}>{order?.status}</span>
                                 </td>
                                 <td className="text-center"><button onClick={() => handleDeleteUser(order?._id)} className="btn btn-link text-danger">{Trash}</button></td>
+                                <td className="text-center">
+                                {order.payment ? (
+                                    "paid"
+                                ) : (
+                                    <Link to={`/dashboard/payment/${order._id}`}>
+                                    <button>Pay</button>
+                                    </Link>
+                                )}
+                                </td>
                             </tr>
 
                             )

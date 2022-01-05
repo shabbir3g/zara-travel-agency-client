@@ -10,7 +10,7 @@ const Service = () => {
   const [service, setService] = useState([]);
 
   useEffect(() => {
-    fetch("/fakeData.json")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -34,7 +34,7 @@ const Service = () => {
                   <Card.Title className="services-title">
                     {service.title}
                   </Card.Title>
-                  <p> {service.description.slice(0, 85)}</p>
+                  {/* <p> {service.description.slice(0, 85)}</p> */}
                  <div className="service-meta"> 
                
                  <Card.Text>
@@ -42,7 +42,7 @@ const Service = () => {
                     </Card.Text>
                 
 
-                    <Link className="card-btn" to={`/order/${service.id}`}>
+                    <Link className="card-btn" to={`/order/${service._id}`}>
                       Order Now
                     </Link>
                  </div>

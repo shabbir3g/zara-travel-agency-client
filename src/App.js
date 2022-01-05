@@ -12,7 +12,8 @@ import MakeAdmin from "./components/Deshboard/MakeAdmin/MakeAdmin.js";
 import ManageAllOrders from "./components/Deshboard/ManageAllOrders/ManageAllOrders.js";
 import ManageProducts from "./components/Deshboard/ManageProducts/ManageProducts.js";
 import MyOrders from "./components/Deshboard/MyOrders/MyOrders.js";
-import Pay from "./components/Deshboard/Pay/Pay.js";
+// import Pay from "./components/Deshboard/Pay/Pay.js";
+import Payment from "./components/Deshboard/Payment/Payment.js";
 import UserReview from "./components/Deshboard/UserReview/UserReview.js";
 import AboutUs from "./components/AboutUs/AboutUs/AboutUs.js";
 import NotFound from "./components/NotFound/NotFound"
@@ -20,6 +21,7 @@ import ContactUs from './components/ContactUs/ContactUs/ContactUs';
 import Cart from './components/Cart/Cart';
 import Order from './components/Order/Order';
 import PrivetRoute from './components/Home/Login/PrivetRoute/PrivetRoute';
+import AdminRoute from './components/Home/Login/AdminRoute/AdminRoute';
 import Services from './components/Services/Services';
 
 
@@ -33,8 +35,8 @@ function App() {
           <Route path="/" element={ <Home /> } />
           <Route path="/home" element={<Home /> } />
           <Route path="/services" element={<Services />} />
-          <Route path="/order/:id" element={<Order />} />
-          <Route path="/addCart/:id" element={<PrivetRoute><Cart /></PrivetRoute>} />
+          <Route path="/order/:_id" element={<Order />} />
+          <Route path="/addCart/:_id" element={<PrivetRoute><Cart /></PrivetRoute>} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
@@ -43,13 +45,14 @@ function App() {
 
           <Route path="/dashboard" element={<Dashboard></Dashboard>}>
           <Route exact path="/dashboard" element={<DashboardHome />} />
-          <Route path={`/dashboard/myOrder/:id`} element={<MyOrders />} />
+          <Route path={`/dashboard/myOrder`} element={<MyOrders />} />
           <Route path={`/dashboard/addReview`} element={<UserReview />} />
-          <Route path={`/dashboard/addProduct`} element={<AddProduct />} />
-          <Route path={`/dashboard/makeAdmin`} element={<MakeAdmin />} />
-          <Route path="/dashboard/manageAllOrders" element={<ManageAllOrders />} />
-          <Route path={`/dashboard/manageProducts`} element={<ManageProducts />} />
-          <Route path={`/dashboard/pay`} element={<Pay />} />
+          <Route path={`/dashboard/addProduct`} element={<AdminRoute><AddProduct /></AdminRoute>} />
+          <Route path={`/dashboard/makeAdmin`} element={<AdminRoute><MakeAdmin /></AdminRoute>} />
+          <Route path="/dashboard/manageAllOrders" element={<AdminRoute><ManageAllOrders /></AdminRoute>} />
+          <Route path={`/dashboard/manageProducts`} element={<AdminRoute><ManageProducts /></AdminRoute>} />
+          <Route path={`/dashboard/payment/:paymentId`} element={<Payment />} />
+          {/* <Route path={`/dashboard/pay`} element={<Pay />} /> */}
         </Route>
         <Route path="*" element={  <NotFound /> } />
 

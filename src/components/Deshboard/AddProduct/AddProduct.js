@@ -7,7 +7,7 @@ const AddProduct = () => {
     const [success, setSuccess] = useState(false);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        axios.post('https://whispering-lake-79289.herokuapp.com/products', data)
+        axios.post('http://localhost:5000/services', data)
             .then(res => {
                 if (res.data.insertedId) {
                     setSuccess(true);
@@ -17,19 +17,19 @@ const AddProduct = () => {
     }
     return (
         <div>
-            <h2 className="text-center mt-5">Add A Product</h2>
+            <h2 className="text-center mt-5">Add A Resort</h2>
             <div className="add-product">
                 <Container>
                     <Form onSubmit={handleSubmit(onSubmit)}>
                         <Row className="mb-3">
                             <Form.Group as={Col} controlId="RoomTitle">
                                 <Form.Label><b>Title</b></Form.Label>
-                                <input type="text" placeholder="Product Title"   {...register("title", { required: true })} />
+                                <input type="text" placeholder="Tour Place Name"   {...register("title", { required: true })} />
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="Description">
                                 <Form.Label><b>Price</b></Form.Label>
-                                <input type="text" placeholder="Product Price"   {...register("price", { required: true })} />
+                                <input type="text" placeholder="Tour Cost"   {...register("cost", { required: true })} />
                             </Form.Group>
                         </Row>
                         <Row className="mb-3">
@@ -41,15 +41,15 @@ const AddProduct = () => {
                         <Row className="mb-3">
                             <Form.Group as={Col} controlId="Description">
                                 <Form.Label><b>Description</b></Form.Label>
-                                <textarea style={{ height: '100px' }} type="text" placeholder="Description"   {...register("desc", { required: true })} />
+                                <textarea style={{ height: '100px' }} type="text" placeholder="Description"   {...register("description", { required: true })} />
                             </Form.Group>
                         </Row>
                         {success && <div className="alert alert-success" role="alert">
-                            Added Product Successfully!
+                            Added Tour Place Successfully!
                         </div>}
                         {errors.exampleRequired && <span>This field is required</span>}
                         <Button className="fw-bold" variant="primary" type="submit">
-                            Add Product
+                            Add Place
                         </Button>
                     </Form>
                 </Container>
