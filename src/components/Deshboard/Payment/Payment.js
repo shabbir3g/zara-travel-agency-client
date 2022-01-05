@@ -23,11 +23,10 @@ const Payment = () => {
   }, [paymentId]);
 
   return (
-    <div style={{marginTop: "5%"}}>
-      <h2>
-        Please pay for : {orders.name} for {orders.email}
-      </h2>
-      <h2>Pay: ${orders.Price}</h2>
+    <div style={{width: '50%', margin: '10% auto'}}>
+      <h4 className="mb-3">
+        Please Pay ${orders.Price} {orders.name} to {orders.email}
+      </h4>
 
       {orders?.Price && (
         <Elements stripe={stripePromise}>

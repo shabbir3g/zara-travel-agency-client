@@ -120,7 +120,7 @@ const CheckoutForm = ({ orders }) => {
         {processing ? (
           <Spinner animation="border" />
         ) : (
-          <button type="submit" disabled={!stripe || success}>
+          <button className='fw-bold btn btn-primary mt-4' type="submit" disabled={!stripe || success}>
             Pay ${Price}
           </button>
         )}
