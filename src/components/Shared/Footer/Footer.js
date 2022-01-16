@@ -30,7 +30,7 @@ const Footer = () => {
                     <div className="row">
                         <div className="col-md-4 col-lg-4">
                         <img className="bd-travel-footer-logo" src={logo} alt="Kinsley" />
-                        <div className="bd-travel-footer-about">BD Travel Agency is a powerful flagship camera drone equipped with a 4/3 CMOS Hasselblad camera to facilitate professional-level imaging. It also offers omnidirectional obstacle.</div>
+                        <div className="bd-travel-footer-about">Zara Travel Agency is a powerful flagship camera drone equipped with a 4/3 CMOS Hasselblad camera to facilitate professional-level imaging. It also offers omnidirectional obstacle.</div>
                         <ul className="bd-travel-footer-social">
                             <li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer">{Facebook}</a></li>
                             <li><a href="https://www.twitter.com/" target="_blank" rel="noreferrer">{Twitter}</a></li>
@@ -50,7 +50,7 @@ const Footer = () => {
                         </ul>
                         </div>
                         <div className="col-md-2 col-lg-2">
-                        <h4>BD Travel</h4>
+                        <h4>Zara Travel</h4>
                         <ul className="bd-travel-footer-menu">
                             <li><Link to="/">Privacy policy</Link></li>
                             <li><Link to="/">Help center</Link></li>
@@ -78,7 +78,7 @@ const Footer = () => {
                     <div className="zara-dron-copyright">
                     <div className="container">
                         <div className="copy-text text-center">
-                        <p className="my-0"> &copy; BD Travel Agency 2021 | All Rights Reserved</p>
+                        <p className="my-0"> &copy; Zara Travel Agency 2021 | All Rights Reserved</p>
                         </div>
                     </div>
                     </div>

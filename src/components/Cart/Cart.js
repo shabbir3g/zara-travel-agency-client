@@ -47,7 +47,7 @@ const Cart = () => {
     console.log(Input);
 
     // data send to the server
-    fetch("https://dry-shelf-35127.herokuapp.com/my-orders", {
+    fetch("http://localhost:5000/my-orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

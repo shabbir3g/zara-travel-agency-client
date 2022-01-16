@@ -15,7 +15,7 @@ const Reviews = () => {
  
 
     useEffect(() => {
-        const url = `https://dry-shelf-35127.herokuapp.com/review`;
+        const url = `http://localhost:5000/review`;
         fetch(url)
         .then(res=> res.json())
         .then(data =>setReviews(data) )

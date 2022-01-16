@@ -19,7 +19,7 @@ const CheckoutForm = ({ orders }) => {
 
   useEffect(() => {
     fetch(
-      "https://dry-shelf-35127.herokuapp.com/create-payment-intent",
+      "http://localhost:5000/create-payment-intent",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -84,7 +84,7 @@ const CheckoutForm = ({ orders }) => {
         transaction: paymentIntent.client_secret.slice('_secret')[0],
       };
       console.log(payment);
-      const url = `https://dry-shelf-35127.herokuapp.com/my-orders/${_id}`;
+      const url = `http://localhost:5000/my-orders/${_id}`;
       console.log(url);
       fetch(url, {
         method: "PUT",
