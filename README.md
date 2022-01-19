@@ -1,10 +1,10 @@
 # BD Travel
 
-In the project directory client side repo link [Bd_Travel_Agency](https://github.com/Nozibul/BD_Travel_Agency).
+In the project directory client side repo link Zara_Travel_Agency](https://github.com/Nozibul/BD_Travel_Agency).
 
-In the project directory server side repo link [bd-travel-agency-server](https://github.com/opibarua1111/bd-travel-agency-server).
+In the project directory server side repo link [zara-travel-agency-server](https://github.com/opibarua1111/zara-travel-agency-server).
 
-In the project directory live side link [Bd-Travel-Agency](https://bd-travel-agency-914b3.web.app/).
+In the project directory live side link [Zara-Travel-Agency](https://bd-travel-agency-914b3.web.app/).
 
 - This project uses backend node.Js, express.js, MongoDB database, cors, dotenv, stripe, nodemon, firebase-admin.
 
